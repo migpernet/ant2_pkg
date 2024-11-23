@@ -17,7 +17,7 @@ def move_ur5():
     
     # Defina as posições para o movimento
     positions = [
-        [0.0, -1.57, 0.0, 0.0, 0.0, 0.0],  # Posição inicial
+        [0.0, -1.57, 1.0, 0.0, 0.0, 0.0],  # Posição inicial
         [0.5, -1.0, 0.5, -0.5, 0.5, 0.0],  # Posição 1
         [1.0, -0.5, 0.0, -1.0, 1.0, 0.5],  # Posição 2
         [0.0, -1.57, 0.0, 1.0, -0.5, 0.5], # Posição 3

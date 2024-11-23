@@ -23,7 +23,12 @@
         args="-file $(find ant2_pkg)/urdf/ur5_jnt_pos_ctrl.urdf -urdf 
         -x 0 -y 0 -z 1.03 
         -R 0 -P 0 -Y 1.57 
-        -model ur5" />
+        -model ur5" 
+  />
+
+  <!--############-->
+  <!--#### Position initial of robot-->
+  <!--############-->   
   
   
   <!--############-->
@@ -52,7 +57,9 @@
   <!--############-->
   <!--#### Publicar os estados das juntas -->
   <!--############-->
-
+  <node name="set_initial_position" pkg="ant2_pkg" type="pos_initial.py" output="screen">
+    <param name="use_sim_time" value="true"/>
+  </node>
 
 
   <!--############-->
