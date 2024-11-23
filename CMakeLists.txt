@@ -8,8 +8,16 @@ project(ant2_pkg)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  control_msgs
   controller_manager
+  geometry_msgs
   joint_state_controller
+  joint_trajectory_controller
+  rospy
+  sensor_msgs
+  std_msgs
+  trajectory_msgs
+  ur_robot_driver
   robot_state_publisher
 )
 

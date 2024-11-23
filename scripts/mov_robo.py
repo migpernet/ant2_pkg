@@ -17,7 +17,7 @@ def move_ur5():
     
     # Defina o ponto da trajetória (posição de destino das juntas)
     point = JointTrajectoryPoint()
-    point.positions = [0.0, -1.57, 1.57, 0.0, 0.0, 0.0]  # Posições das juntas
+    point.positions = [0.0, -1.57, 1.0, 0.0, 0.0, 0.0]  # Posições das juntas
     point.time_from_start = rospy.Duration(2)  # Tempo em segundos para alcançar a posição
     
     # Adicione o ponto à mensagem de trajetória
