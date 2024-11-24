@@ -5,7 +5,7 @@ joint_state_controller:
 
 # Controlador de trajetória conjunta para o UR5
 arm_controller:
-  type: position_controllers/JointTrajectoryController
+  type: position_controllers/JointTrajectoryController 
   joints:
     - shoulder_pan_joint
     - shoulder_lift_joint
@@ -13,13 +13,13 @@ arm_controller:
     - wrist_1_joint
     - wrist_2_joint
     - wrist_3_joint
-  gains:
-    shoulder_pan_joint:  {p: 100.0, i: 0.1, d: 10.0}
-    shoulder_lift_joint: {p: 100.0, i: 0.1, d: 10.0}
-    elbow_joint:         {p: 100.0, i: 0.1, d: 10.0}
-    wrist_1_joint:       {p: 100.0, i: 0.1, d: 10.0}
-    wrist_2_joint:       {p: 100.0, i: 0.1, d: 10.0}
-    wrist_3_joint:       {p: 100.0, i: 0.1, d: 10.0}
+  pid_gains:
+    shoulder_pan_joint:  {p: 50.0, i: 0.1, d: 10.0}
+    shoulder_lift_joint: {p: 50.0, i: 0.1, d: 10.0}
+    elbow_joint:         {p: 50.0, i: 0.1, d: 10.0}
+    wrist_1_joint:       {p: 50.0, i: 0.1, d: 10.0}
+    wrist_2_joint:       {p: 50.0, i: 0.1, d: 10.0}
+    wrist_3_joint:       {p: 50.0, i: 0.1, d: 10.0}
   constraints:
     goal_time: 1.0
     stopped_velocity_tolerance: 0.01

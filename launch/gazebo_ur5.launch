@@ -2,9 +2,9 @@
 <launch>
 
     <arg name="world_name" default="$(find ant_pkg)/worlds/spawn.world" />
-    <arg name="paused" default="true" />
     <arg name="gui" default="true" />   
     <arg name="model_name" default="ur5"/>
+    <param name="robot_description" textfile="$(find ant2_pkg)/urdf/ur5_jnt_pos_ctrl.urdf"/>
 
   <!--############-->
   <!--#### Creating a Custom World File source: https://classic.gazebosim.org/tutorials?tut=ros_roslaunch -->
@@ -42,7 +42,6 @@
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find ant2_pkg)/config/ur5_jnt_pos_ctrl.yaml" command="load"/>
 
-  <param name="robot_description" textfile="$(find ant2_pkg)/urdf/ur5_jnt_pos_ctrl.urdf"/>
   
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
