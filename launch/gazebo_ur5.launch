@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="world_name" default="$(find ant_pkg)/worlds/spawn.world" />
+    <arg name="world_name" default="$(find ant2_pkg)/worlds/spawn1.world" />
     <arg name="gui" default="true" />   
     <arg name="model_name" default="ur5"/>
     <param name="robot_description" textfile="$(find ant2_pkg)/urdf/ur5_jnt_pos_ctrl.urdf"/>
@@ -42,10 +42,13 @@
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find ant2_pkg)/config/ur5_jnt_pos_ctrl.yaml" command="load"/>
 
-  
+
+  <arg name="controllers" default="eff_joint_traj_controller joint_state_controller" /> 
+
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" args="joint_state_controller arm_controller"/>
+      output="screen" ns="ur5" args="$(arg controllers)"/>
+
 
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
@@ -66,7 +69,11 @@
   <!--############-->
 
 
+    <!-- LOAD CONTROLLERS IN STOP MODE -->
+    <!-- <arg name="stopped_controllers" default="joint_group_velocity_controllers joint_group_pos_controller" />
 
+    <node name="ros_control_controller_manager" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen" args="$(arg stopped_controllers)" /> -->
 
 
 

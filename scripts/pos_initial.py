@@ -5,7 +5,7 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 def move_to_initial_position():
     rospy.init_node('set_initial_position', anonymous=True)
-    pub = rospy.Publisher('/arm_controller/command', JointTrajectory, queue_size=10)
+    pub = rospy.Publisher('/ur5/eff_joint_traj_controller/command', JointTrajectory, queue_size=10)
 
     rospy.sleep(1)  # Aguarde o Gazebo e os plugins inicializarem.
 

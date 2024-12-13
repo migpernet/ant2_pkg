@@ -7,7 +7,7 @@ def move_ur5():
     # Inicialize o nó ROS
     rospy.init_node('ur5_trajectory_control', anonymous=True)
     # Configura o publisher para o tópico de controle do UR5
-    pub = rospy.Publisher('/arm_controller/command', JointTrajectory, queue_size=10)
+    pub = rospy.Publisher('/ur5/eff_joint_traj_controller/command', JointTrajectory, queue_size=10)
     
     # Crie a mensagem de trajetória
     trajectory_msg = JointTrajectory()
